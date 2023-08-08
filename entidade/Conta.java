@@ -53,18 +53,18 @@ public class Conta {
 	}
 
 	public void saque(Double quantidade) {
-		if (balanço < quantidade) {
-			throw new ExcecaoDominio("Erro de saque: saldo insuficiente");
-		}
 		if (quantidade >= limitederetirada) {
 			throw new ExcecaoDominio("Erro de retirada: o valor excede o limite de retirada");
 		}
+		if (balanço < quantidade || balanço < limitederetirada) {
+			throw new ExcecaoDominio("Erro de saque: saldo insuficiente");
+		}
+
 		balanço -= quantidade;
 
 	}
-	
+
 	public String toString() {
-		return "Novo Balanço: "
-				+ String.format("%.2f", balanço);
+		return "Novo Balanço: " + String.format("%.2f", balanço);
 	}
 }

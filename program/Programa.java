@@ -17,8 +17,9 @@ public class Programa {
 			System.out.println("Insira os dados da conta");
 			System.out.print("Numero da conta: ");
 			Integer numeroconta = sc.nextInt();
+			sc.nextLine();
 			System.out.print("Titular: ");
-			String titular = sc.next();
+			String titular = sc.nextLine();
 			System.out.print("Balanço inicial: ");
 			Double balanço = sc.nextDouble();
 			System.out.print("Limite de retirada: ");
